@@ -1,0 +1,175 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fundo com Flores Subindo */
+.background-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    opacity: 0.7;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container do Convite */
+.card-container {
+    z-index: 10;
+    perspective: 1000px;
+}
+
+.envelope {
+    width: 350px;
+    min-height: 220px;
+    background-color: #ff4d6d;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    padding: 20px;
+    position: relative;
+    border: 4px solid #ff758f;
+}
+
+/* Quando a carta for aberta, ela muda de estilo */
+.envelope.open {
+    background-color: #fff0f3;
+    border: 3px solid #ff4d6d;
+    min-height: 350px;
+    display: block;
+}
+
+/* Botão de Abrir */
+.open-btn {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #ff4d6d;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.open-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Conteúdo da Carta */
+.letter-content {
+    display: none;
+    text-align: center;
+    color: #590d22;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.letter-content h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.letter-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botões de Ação */
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-accept {
+    background-color: #38b000;
+    color: white;
+}
+
+.btn-accept:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(56, 176, 0, 0.4);
+}
+
+.btn-decline {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Efeito de Corações Estourando */
+.heart-burst {
+    position: absolute;
+    font-size: 30px;
+    pointer-events: none;
+    animation: burst 1s ease-out forwards;
+    z-index: 100;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1.5);
+        opacity: 0;
+    }
+}

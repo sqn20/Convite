@@ -55,64 +55,71 @@ body {
     perspective: 1000px;
 }
 
+/* FORMATO DA CARTA: Clássico Branco */
 .envelope {
-    width: 350px;
-    min-height: 220px;
-    background-color: #ff4d6d;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 340px;
+    min-height: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease-in-out;
-    padding: 20px;
+    padding: 25px;
     position: relative;
-    border: 4px solid #ff758f;
+    border: 1px solid #e0e0e0;
 }
 
-/* Quando a carta for aberta, ela muda de estilo */
+/* Estilo clássico quando a carta é aberta */
 .envelope.open {
-    background-color: #fff0f3;
-    border: 3px solid #ff4d6d;
-    min-height: 350px;
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    min-height: 340px;
     display: block;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
 }
 
-/* Botão de Abrir */
+/* BOTÃO CLICÁVEL: Versão menor apenas escrito 'clique' */
 .open-btn {
-    padding: 15px 25px;
-    font-size: 18px;
-    background-color: #fff;
-    color: #ff4d6d;
+    padding: 8px 18px;
+    font-size: 14px;
+    background-color: #ff4d6d;
+    color: #ffffff;
     border: none;
-    border-radius: 25px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    font-weight: 500;
+    text-transform: lowercase;
+    box-shadow: 0 3px 10px rgba(255, 77, 109, 0.2);
+    transition: all 0.2s ease;
 }
 
 .open-btn:hover {
     transform: scale(1.05);
+    background-color: #ff758f;
 }
 
 /* Conteúdo da Carta */
 .letter-content {
     display: none;
     text-align: center;
-    color: #590d22;
+    color: #333333;
     animation: fadeIn 0.8s ease-in-out forwards;
 }
 
 .letter-content h2 {
     margin-bottom: 15px;
-    font-size: 26px;
+    font-size: 24px;
+    color: #ff4d6d;
+    font-family: 'Georgia', serif;
 }
 
 .letter-content p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.6;
     margin-bottom: 15px;
+    color: #555555;
 }
 
 @keyframes fadeIn {
@@ -128,8 +135,8 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 22px;
+    font-size: 15px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
@@ -138,18 +145,18 @@ body {
 }
 
 .btn-accept {
-    background-color: #38b000;
+    background-color: #ff4d6d;
     color: white;
 }
 
 .btn-accept:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(56, 176, 0, 0.4);
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
 }
 
 .btn-decline {
-    background-color: #ccc;
-    color: #666;
+    background-color: #e0e0e0;
+    color: #a0a0a0;
     cursor: not-allowed;
     opacity: 0.6;
 }
